@@ -146,7 +146,7 @@ public class MaterialSlider extends CustomView {
 	protected void onSizeChanged(int w, int h, int oldw, int oldh) {
 		super.onSizeChanged(w, h, oldw, oldh);
 		mRightX = mViewWidth - mIndicatorRadius;
-		mBottomLayoutRect.set(mLeftX, (int)(getBaseLineCenterY() - mBaseLineHeight / 2), mRightX, (int)(getBaseLineCenterY() + mBaseLineHeight / 2));
+		mBottomLayoutRect.set(mLeftX, (int) (getBaseLineCenterY() - mBaseLineHeight / 2), mRightX, (int) (getBaseLineCenterY() + mBaseLineHeight / 2));
 	}
 
 	/**
@@ -167,7 +167,7 @@ public class MaterialSlider extends CustomView {
 			mBottomLayoutRect.left = mLeftX;
 		}
 		int length = getCurrentLength(mCurrentProgress);
-		mBaseLineRect.set(mLeftX, (int)getBaseLineCenterY() - mBaseLineHeight / 2, mLeftX + length , (int)(getBaseLineCenterY() + mBaseLineHeight / 2));
+		mBaseLineRect.set(mLeftX, (int) getBaseLineCenterY() - mBaseLineHeight / 2, mLeftX + length, (int) (getBaseLineCenterY() + mBaseLineHeight / 2));
 	}
 
 	/**
@@ -210,7 +210,8 @@ public class MaterialSlider extends CustomView {
 		public void run() {
 			if (mCurrentProgress != mProgress) {
 				if (!indicatorAnimator.isRunning()) {
-					int d = mProgress - mCurrentProgress > 0 ? 4 : -4;
+					int delta = (int) Math.ceil(4f / 100 * (mMaxProgress - mMinProgress));
+					int d = mProgress - mCurrentProgress > 0 ? delta : -delta;
 					if (d > 0) {
 						mCurrentProgress = Math.min(mCurrentProgress + d, mProgress);
 					} else if (d < 0){
