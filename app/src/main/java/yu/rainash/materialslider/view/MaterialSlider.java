@@ -131,7 +131,6 @@ public class MaterialSlider extends CustomView {
 	protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
 		super.onMeasure(widthMeasureSpec, heightMeasureSpec);
 		mViewWidth = getMeasurement(widthMeasureSpec, 0);
-		mViewHeight = getMeasurement(heightMeasureSpec, mViewHeight);
 		setMeasuredDimension(mViewWidth, mViewHeight);
 	}
 
