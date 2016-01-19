@@ -9,8 +9,8 @@ import android.view.ViewParent;
 
 
 /**
- * @author CalmYu
- * @date 2015-8-2
+ * @author luke.yujb
+ * @date 2015-1-19
  */
 public class CustomView extends View{
 	

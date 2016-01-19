@@ -20,12 +20,12 @@ import yu.rainash.materialslider.R;
 /**
  * setProgress, setOnProgressChangeListener, setMax, setMin
  * A material style seekbar
- * @author CalmYu
- * @date 2015-8-2
+ * @author luke.yujb
+ * @date 2015-1-19
  */
 public class MaterialSlider extends CustomView {
 
-	private static final int ANIM_FRAME_DELAY = 15;
+	private static final int ANIM_FRAME_DELAY = 10;
 
 	private static final int DEFAULT_MAX = 100;
 
@@ -209,7 +209,7 @@ public class MaterialSlider extends CustomView {
 		public void run() {
 			if (mCurrentProgress != mProgress) {
 				if (!indicatorAnimator.isRunning()) {
-					int delta = (int) Math.ceil(4f / 100 * (mMaxProgress - mMinProgress));
+					int delta = (int) Math.ceil(5f / 100 * (mMaxProgress - mMinProgress));
 					int d = mProgress - mCurrentProgress > 0 ? delta : -delta;
 					if (d > 0) {
 						mCurrentProgress = Math.min(mCurrentProgress + d, mProgress);
